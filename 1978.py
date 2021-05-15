@@ -1,9 +1,14 @@
-n = [2]
-m = int(range())
-if m == 1:
-    print(0)
-elif m == 2:
-    print(1)
-# else:
-#     for i in range(3, m + 1):
-#
+n = []
+input()
+m = list(map(int, input().split()))
+for i in m:
+    if i == 1:
+        continue
+    isF = True
+    for j in range(2, i // 2 + 1):
+        if i % j == 0:
+            isF = False
+            break
+    if isF:
+        n.append(i)
+print(len(n))
